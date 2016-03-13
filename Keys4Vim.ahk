@@ -168,8 +168,8 @@ Return
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 
 ;~sc1E::  ; a
-~a::  ; a
-Input, UserInput, I C T0.7 *,,aa,as,ad,af,פפ,פû,פג,פא,גפ,אפ,s,d,f,û,ג
+~vk41::  ; a
+Input, UserInput, I C T0.7 *,,as,ad,af,פפ,פû,פג,פא,גפ,אפ,a,s,d,f,û,ג,א
 
 if UserInput = as
     Send, {backspace 1}n
@@ -178,15 +178,11 @@ else if UserInput = פû
 else if UserInput = ad
     Send, {backspace 1}p
 else if UserInput = פג
-    Send, {backspace 1}ד
+    Send, {backspace 1}ח
 else if UserInput = af
     Send, {backspace 1}j
 else if UserInput = פא
-    Send, {backspace 1}ץ
-else if UserInput = a
-    Send, {backspace 1}{Space}
-else if UserInput = פ
-    Send, {backspace 1}{Space}
+    Send, {backspace 1}מ
 else if UserInput = s
     Send, {backspace 1}l
 else if UserInput = û
@@ -197,14 +193,22 @@ else if UserInput = ג
     Send, {backspace 1}ם
 else if UserInput = f
     Send, {backspace 1}w
+else if UserInput = א
+    Send, {backspace 1}צ
+/*
+else if UserInput = a
+    Send, {backspace 1}{Space}
+else if UserInput = פ
+    Send, {backspace 1}{Space}
 else if UserInput = aa       ;ENG
     Send, {backspace 1}.
 else if UserInput = פפ
     Send, {backspace 1}.
 else if UserInput = גפ
-    Send, {backspace 1}ש
+    Send, {backspace 1}ב     ;RU
 else if UserInput = אפ
-    Send, {backspace 1}¸
+    Send, {backspace 1}‏
+*/
 return
 
 
@@ -237,6 +241,9 @@ else if UserInput = F
     Send, {backspace 1}W
 else if UserInput = À      ; RU
     Send, {backspace 1}Ó
+
+
+/*
 else if UserInput = A      ; ENG
     Send, {backspace 1}{Space}
 else if UserInput = Ô
@@ -249,6 +256,7 @@ else if UserInput = ÂÔ
     Send, {backspace 1}Ù
 else if UserInput = ÀÔ
     Send, {backspace 1}¨
+*/
 return
 
 /*
