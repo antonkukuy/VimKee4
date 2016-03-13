@@ -166,10 +166,8 @@ Return
 ;3::VimSetMode("Insert")
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
-
-;~sc1E::  ; a
-~vk41::  ; a
-Input, UserInput, I C T0.7 *,,as,ad,af,פפ,פû,פג,פא,גפ,אפ,a,s,d,f,û,ג,א
+~a::  ; ;
+Input, UserInput, I C T0.7 *,,as,ad,af,פפ,פû,פג,פא,גפ,אפ,s,d,f,û,ג,א
 
 if UserInput = as
     Send, {backspace 1}n
