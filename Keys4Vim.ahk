@@ -46,7 +46,7 @@ Return
 Return
 
 +Space::
-;^LButton::
++LButton::
 Suspend
 Return
 
