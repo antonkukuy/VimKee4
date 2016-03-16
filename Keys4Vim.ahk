@@ -168,6 +168,8 @@ Return
 
 ;3::VimSetMode("Insert")
 
+
+
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 ~a::  ; ;
 Input, UserInput, I C T0.7 *,,as,ad,af,фф,фы,фв,фа,вф,аф,s,d,f,ы,в,а
