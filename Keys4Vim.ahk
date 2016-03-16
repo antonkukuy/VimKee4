@@ -1,5 +1,5 @@
 
-Process, Priority, , AboveNormal    ; İòà çàïèñü ñîîáùàåò îïåğàöèîííîé ñèñòåìå óäåëèòü áîëüøå âíèìàíèÿ ê èñïîëíåíèş äàííûõ êîìàíä
+Process, Priority, , AboveNormal    ; Ğ­Ñ‚Ğ° Ğ·Ğ°Ğ¿Ğ¸ÑÑŒ ÑĞ¾Ğ¾Ğ±Ñ‰Ğ°ĞµÑ‚ Ğ¾Ğ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¾Ğ½Ğ½Ğ¾Ğ¹ ÑĞ¸ÑÑ‚ĞµĞ¼Ğµ ÑƒĞ´ĞµĞ»Ğ¸Ñ‚ÑŒ Ğ±Ğ¾Ğ»ÑŒÑˆĞµ Ğ²Ğ½Ğ¸Ğ¼Ğ°Ğ½Ğ¸Ñ Ğº Ğ¸ÑĞ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ¸Ñ Ğ´Ğ°Ğ½Ğ½Ñ‹Ñ… ĞºĞ¾Ğ¼Ğ°Ğ½Ğ´
 
 
 
@@ -9,6 +9,7 @@ Process, Priority, , AboveNormal    ; İòà çàïèñü ñîîáùàåò îïåğàöèîííîé ñèñòåìå ó
 ;GroupAdd VimGroup, ahk_class Photo_Lightweight_Viewer ; Photo_Viewer_windows
 
 ;GroupAdd VimGroup
+
 GroupAdd VimGroup
 ;GroupAdd, VimGroup, , , , Klavarog
 
@@ -25,6 +26,7 @@ VimMode=Insert
 Vim_g=0
 Vim_n=0
 VimLineCopy=0
+
 
 
 Return
@@ -50,12 +52,13 @@ Return
 Suspend
 Return
 
-
 #Include, d:\KEYBOARD\VimKee4\AddonsForKeys4Vim.ahk
-
 
 ; Vim mode {{{
 #IfWInActive, ahk_group VimGroup
+
+
+
 
 ; Reset Modes {{{
 
@@ -167,93 +170,93 @@ Return
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 ~a::  ; ;
-Input, UserInput, I C T0.7 *,,as,ad,af,ôô,ôû,ôâ,ôà,âô,àô,s,d,f,û,â,à
+Input, UserInput, I C T0.7 *,,as,ad,af,Ñ„Ñ„,Ñ„Ñ‹,Ñ„Ğ²,Ñ„Ğ°,Ğ²Ñ„,Ğ°Ñ„,s,d,f,Ñ‹,Ğ²,Ğ°
 
 if UserInput = as
     Send, {backspace 1}n
-else if UserInput = ôû
-    Send, {backspace 1}ò
+else if UserInput = Ñ„Ñ‹
+    Send, {backspace 1}Ñ‚
 else if UserInput = ad
     Send, {backspace 1}p
-else if UserInput = ôâ
-    Send, {backspace 1}ç
+else if UserInput = Ñ„Ğ²
+    Send, {backspace 1}Ğ·
 else if UserInput = af
     Send, {backspace 1}j
-else if UserInput = ôà
-    Send, {backspace 1}î
+else if UserInput = Ñ„Ğ°
+    Send, {backspace 1}Ğ¾
 else if UserInput = s
     Send, {backspace 1}l
-else if UserInput = û
-    Send, {backspace 1}ê
+else if UserInput = Ñ‹
+    Send, {backspace 1}Ğº
 else if UserInput = d
     Send, {backspace 1}i
-else if UserInput = â
-    Send, {backspace 1}í
+else if UserInput = Ğ²
+    Send, {backspace 1}Ğ½
 else if UserInput = f
     Send, {backspace 1}w
-else if UserInput = à
-    Send, {backspace 1}ö
+else if UserInput = Ğ°
+    Send, {backspace 1}Ñ†
 /*
 else if UserInput = a
     Send, {backspace 1}{Space}
-else if UserInput = ô
+else if UserInput = Ñ„
     Send, {backspace 1}{Space}
 else if UserInput = aa       ;ENG
     Send, {backspace 1}.
-else if UserInput = ôô
+else if UserInput = Ñ„Ñ„
     Send, {backspace 1}.
-else if UserInput = âô
-    Send, {backspace 1}á     ;RU
-else if UserInput = àô
-    Send, {backspace 1}ş
+else if UserInput = Ğ²Ñ„
+    Send, {backspace 1}Ğ±     ;RU
+else if UserInput = Ğ°Ñ„
+    Send, {backspace 1}Ñ
 */
 return
 
 
 ;~+sc1E::  ; a
 ~+a::  ; a
-Input, UserInput, I C T0.7 *,,AS,AD,AF,AA,ÔÔ,ÔÛ,ÔÂ,ÔÀ,ÔÔ,ÂÔ,ÀÔ,S,D,F,Û,Â,À
+Input, UserInput, I C T0.7 *,,AS,AD,AF,AA,Ğ¤Ğ¤,Ğ¤Ğ«,Ğ¤Ğ’,Ğ¤Ğ,Ğ¤Ğ¤,Ğ’Ğ¤,ĞĞ¤,S,D,F,Ğ«,Ğ’,Ğ
 SetKeyDelay, -1
 
 if UserInput = AS
     Send, {backspace 1}N
-else if UserInput = ÔÛ
-    Send, {backspace 1}Ò
+else if UserInput = Ğ¤Ğ«
+    Send, {backspace 1}Ğ¢
 else if UserInput = AD
     Send, {backspace 1}P
-else if UserInput = ÔÂ
-    Send, {backspace 1}Ã
+else if UserInput = Ğ¤Ğ’
+    Send, {backspace 1}Ğ“
 else if UserInput = AF
     Send, {backspace 1}J
-else if UserInput = ÔÀ
-    Send, {backspace 1}Õ
+else if UserInput = Ğ¤Ğ
+    Send, {backspace 1}Ğ¥
 else if UserInput = S
     Send, {backspace 1}L
-else if UserInput = Û
-    Send, {backspace 1}Ê
+else if UserInput = Ğ«
+    Send, {backspace 1}Ğš
 else if UserInput = D
     Send, {backspace 1}I
-else if UserInput = Â
-    Send, {backspace 1}Í
+else if UserInput = Ğ’
+    Send, {backspace 1}Ğ
 else if UserInput = F
     Send, {backspace 1}W
-else if UserInput = À      ; RU
-    Send, {backspace 1}Ó
+else if UserInput = Ğ      ; RU
+    Send, {backspace 1}Ğ£
 
 
 /*
 else if UserInput = A      ; ENG
     Send, {backspace 1}{Space}
-else if UserInput = Ô
+else if UserInput = Ğ¤
     Send, {backspace 1}{Space}
 else if UserInput = AA
     Send, {backspace 1}.
-else if UserInput = ÔÔ
+else if UserInput = Ğ¤Ğ¤
     Send, {backspace 1}.
-else if UserInput = ÂÔ
-    Send, {backspace 1}Ù
-else if UserInput = ÀÔ
-    Send, {backspace 1}¨
+else if UserInput = Ğ’Ğ¤
+    Send, {backspace 1}Ğ©
+else if UserInput = ĞĞ¤
+    Send, {backspace 1}Ğ
 */
 return
 
@@ -265,159 +268,159 @@ return
 
 ;~sc1F::   ;s
 ~s::   ;s
-Input, UserInput, I C T0.7 *,,ss,sa,sd,sf,ûô,ûâ,ûà,àû,âû,a,d,f,ô,û,à
+Input, UserInput, I C T0.7 *,,ss,sa,sd,sf,Ñ‹Ñ„,Ñ‹Ğ²,Ñ‹Ğ°,Ğ°Ñ‹,Ğ²Ñ‹,a,d,f,Ñ„,Ñ‹,Ğ°
 SetKeyDelay, -1
 if UserInput = sa
     Send, {backspace 1}m
-else if UserInput = ûô
-    Send, {backspace 1}ï
+else if UserInput = Ñ‹Ñ„
+    Send, {backspace 1}Ğ¿
 else if UserInput = sd
     Send, {backspace 1}f
-else if UserInput = ûâ
-    Send, {backspace 1}ÿ
+else if UserInput = Ñ‹Ğ²
+    Send, {backspace 1}Ñ
 else if UserInput = sf
     Send, {backspace 1}g
-else if UserInput = ûà
-    Send, {backspace 1}û
+else if UserInput = Ñ‹Ğ°
+    Send, {backspace 1}Ñ‹
 else if UserInput = a
     Send, {backspace 1}o         ;RU
-else if UserInput = ô
-    Send, {backspace 1}è
+else if UserInput = Ñ„
+    Send, {backspace 1}Ğ¸
 else if UserInput = ss
     Send, {backspace 1}a         ; ENG
-else if UserInput = ûû
-    Send, {backspace 1}à         ; RU
+else if UserInput = Ñ‹Ñ‹
+    Send, {backspace 1}Ğ°         ; RU
 else if UserInput = d
     Send, {backspace 1}h
-else if UserInput = â
-    Send, {backspace 1}ğ         ;RU
+else if UserInput = Ğ²
+    Send, {backspace 1}Ñ€         ;RU
 else if UserInput = f
     Send, {backspace 1}c         ;ENG
-else if UserInput = à            ;RU
-    Send, {backspace 1}ì
-else if UserInput = àû
-    Send, {backspace 1}ñ         ;RU
-else if UserInput = âû
-    Send, {backspace 1}ú
+else if UserInput = Ğ°            ;RU
+    Send, {backspace 1}Ğ¼
+else if UserInput = Ğ°Ñ‹
+    Send, {backspace 1}Ñ         ;RU
+else if UserInput = Ğ²Ñ‹
+    Send, {backspace 1}ÑŠ
 return
 
 
 ;~+sc1F::       ;s
 ~+s::           ;s
 
-Input, UserInput, I C T0.7 *,,SS,SA,SD,SF,ÛÔ,ÛÂ,ÛÀ,ÀÛ,ÂÛ,A,D,F,Ô,Û,À
+Input, UserInput, I C T0.7 *,,SS,SA,SD,SF,Ğ«Ğ¤,Ğ«Ğ’,Ğ«Ğ,ĞĞ«,Ğ’Ğ«,A,D,F,Ğ¤,Ğ«,Ğ
 SetKeyDelay, -1
 if UserInput = SA
     Send, {backspace 1}M
-else if UserInput = ÛÔ
-    Send, {backspace 1}Ï
+else if UserInput = Ğ«Ğ¤
+    Send, {backspace 1}ĞŸ
 else if UserInput = SD
     Send, {backspace 1}F
-else if UserInput = ÛÂ
-    Send, {backspace 1}ß
+else if UserInput = Ğ«Ğ’
+    Send, {backspace 1}Ğ¯
 else if UserInput = SF
     Send, {backspace 1}G
-else if UserInput = ÛÀ
-    Send, {backspace 1}Û
+else if UserInput = Ğ«Ğ
+    Send, {backspace 1}Ğ«
 else if UserInput = A
     Send, {backspace 1}O         ;RU
-else if UserInput = Ô
-    Send, {backspace 1}È
+else if UserInput = Ğ¤
+    Send, {backspace 1}Ğ˜
 else if UserInput = SS
     Send, {backspace 1}A         ; ENG
-else if UserInput = ÛÛ
-    Send, {backspace 1}À         ; RU
+else if UserInput = Ğ«Ğ«
+    Send, {backspace 1}Ğ         ; RU
 else if UserInput = D
     Send, {backspace 1}H
-else if UserInput = Â
-    Send, {backspace 1}Ğ         ;RU
+else if UserInput = Ğ’
+    Send, {backspace 1}Ğ          ;RU
 else if UserInput = F
     Send, {backspace 1}C         ;ENG
-else if UserInput = À            ;ru
-    Send, {backspace 1}Ì
-else if UserInput = ÀÛ
-    Send, {backspace 1}Ñ         ;RU
-else if UserInput = ÂÛ
-    Send, {backspace 1}Ú
+else if UserInput = Ğ            ;ru
+    Send, {backspace 1}Ğœ
+else if UserInput = ĞĞ«
+    Send, {backspace 1}Ğ¡         ;RU
+else if UserInput = Ğ’Ğ«
+    Send, {backspace 1}Ğª
 return
 
 /*
-~sc1F & sc1E::send {backspace}ù  ; sa to o
-~sc1F & sc20::send {backspace}ğ  ; sd to h
-~sc1F & sc21::send {backspace}ñ  ; sf to c
+~sc1F & sc1E::send {backspace}Ñ‰  ; sa to o
+~sc1F & sc20::send {backspace}Ñ€  ; sd to h
+~sc1F & sc21::send {backspace}Ñ  ; sf to c
 */
 
 
 ;~sc20::  ; d
 ~d::  ; d
-Input, UserInput, I C T0.7 *,,dd,da,ds,df,ââ,âô,âû,âà,ûâ,a,f,ô,û,à
+Input, UserInput, I C T0.7 *,,dd,da,ds,df,Ğ²Ğ²,Ğ²Ñ„,Ğ²Ñ‹,Ğ²Ğ°,Ñ‹Ğ²,a,f,Ñ„,Ñ‹,Ğ°
 SetKeyDelay, -1
 if UserInput = da
     Send, {backspace 1}r
-else if UserInput = âô
-    Send, {backspace 1}â         ;RU
+else if UserInput = Ğ²Ñ„
+    Send, {backspace 1}Ğ²         ;RU
 else if UserInput = ds
     Send, {backspace 1}s
-else if UserInput = âû
-    Send, {backspace 1}ñ         ;RU
+else if UserInput = Ğ²Ñ‹
+    Send, {backspace 1}Ñ         ;RU
 else if UserInput = df
     Send, {backspace 1}x
-else if UserInput = âà
-    Send, {backspace 1}é
+else if UserInput = Ğ²Ğ°
+    Send, {backspace 1}Ğ¹
 else if UserInput = a
     Send, {backspace 1}y
-else if UserInput = ô
-    Send, {backspace 1}ü
+else if UserInput = Ñ„
+    Send, {backspace 1}ÑŒ
 else if UserInput = s
     Send, {backspace 1}t
-else if UserInput = û
-    Send, {backspace 1}å         ;RU
+else if UserInput = Ñ‹
+    Send, {backspace 1}Ğµ         ;RU
 else if UserInput = dd
     Send, {backspace 1}e
-else if UserInput = ââ
-    Send, {backspace 1}î         ;RU
+else if UserInput = Ğ²Ğ²
+    Send, {backspace 1}Ğ¾         ;RU
 else if UserInput = f
     Send, {backspace 1}v
-else if UserInput = à
-    Send, {backspace 1}á         ;RU
-else if UserInput = ûâ
-    Send, {backspace 1}ş
+else if UserInput = Ğ°
+    Send, {backspace 1}Ğ±         ;RU
+else if UserInput = Ñ‹Ğ²
+    Send, {backspace 1}Ñ
 return
 
 ;~+sc20::  ; D
 ~+d::  ; D
-Input, UserInput, I C T0.7 *,,DD,DA,DS,DF,ÂÂ,ÂÔ,ÂÛ,ÂÀ,ÛÂ,A,S,F,Ô,Û,Â,À
+Input, UserInput, I C T0.7 *,,DD,DA,DS,DF,Ğ’Ğ’,Ğ’Ğ¤,Ğ’Ğ«,Ğ’Ğ,Ğ«Ğ’,A,S,F,Ğ¤,Ğ«,Ğ’,Ğ
 SetKeyDelay, -1
 if UserInput = DA
     Send, {backspace 1}R
-else if UserInput = ÂÔ
-    Send, {backspace 1}Â      ;RU
+else if UserInput = Ğ’Ğ¤
+    Send, {backspace 1}Ğ’      ;RU
 else if UserInput = DS
     Send, {backspace 1}S
-else if UserInput = ÂÛ
-    Send, {backspace 1}Ñ      ;RU
+else if UserInput = Ğ’Ğ«
+    Send, {backspace 1}Ğ¡      ;RU
 else if UserInput = DF
     Send, {backspace 1}X
-else if UserInput = ÂÀ
-    Send, {backspace 1}É
+else if UserInput = Ğ’Ğ
+    Send, {backspace 1}Ğ™
 else if UserInput = A
     Send, {backspace 1}Y
-else if UserInput = Ô
-    Send, {backspace 1}Ü
+else if UserInput = Ğ¤
+    Send, {backspace 1}Ğ¬
 else if UserInput = S
     Send, {backspace 1}T
-else if UserInput = Û
-    Send, {backspace 1}Å      ;RU
+else if UserInput = Ğ«
+    Send, {backspace 1}Ğ•      ;RU
 else if UserInput = DD
     Send, {backspace 1}E
-else if UserInput = ÂÂ
-    Send, {backspace 1}Î      ;RU
+else if UserInput = Ğ’Ğ’
+    Send, {backspace 1}Ğ      ;RU
 else if UserInput = F
     Send, {backspace 1}V
-else if UserInput = À
-    Send, {backspace 1}Á      ;RU
-else if UserInput = ÛÂ
-    Send, {backspace 1}Ş
+else if UserInput = Ğ
+    Send, {backspace 1}Ğ‘      ;RU
+else if UserInput = Ğ«Ğ’
+    Send, {backspace 1}Ğ®
 return
 
 /*
@@ -428,79 +431,79 @@ return
 
 ;~sc21::  ; f
 ~f::  ; f
-Input, UserInput, I T0.7  *,,ff,fa,fs,fd,àà,àô,àû,àâ,ôà,ûà,a,s,d,ô,û,â
+Input, UserInput, I T0.7  *,,ff,fa,fs,fd,Ğ°Ğ°,Ğ°Ñ„,Ğ°Ñ‹,Ğ°Ğ²,Ñ„Ğ°,Ñ‹Ğ°,a,s,d,Ñ„,Ñ‹,Ğ²
 SetKeyDelay, -1
 if UserInput = fa
     Send, {backspace 1}b
-else if UserInput = àô        ; fa to b
-    Send, {backspace 1}ç
+else if UserInput = Ğ°Ñ„        ; fa to b
+    Send, {backspace 1}Ğ·
 else if UserInput = fs
     Send, {backspace 1}k
-else if UserInput = àû        ; fs to k
-    Send, {backspace 1}÷
+else if UserInput = Ğ°Ñ‹        ; fs to k
+    Send, {backspace 1}Ñ‡
 else if UserInput = fd
     Send, {backspace 1}z
-else if UserInput = àâ  ; fd to z
-    Send, {backspace 1}ø
+else if UserInput = Ğ°Ğ²  ; fd to z
+    Send, {backspace 1}Ñˆ
 else if UserInput = a
     Send, {backspace 1}u
-else if UserInput = ô  ; fa to u
-    Send, {backspace 1}ä
+else if UserInput = Ñ„  ; fa to u
+    Send, {backspace 1}Ğ´
 else if UserInput = s
     Send, {backspace 1}d
-else if UserInput = û  ; fs to d
-    Send, {backspace 1}ë
+else if UserInput = Ñ‹  ; fs to d
+    Send, {backspace 1}Ğ»
 else if UserInput = d
     Send, {backspace 1}q
-else if UserInput = â  ; fd to q
-    Send, {backspace 1}æ
+else if UserInput = Ğ²  ; fd to q
+    Send, {backspace 1}Ğ¶
 else if UserInput = ff
     Send, {backspace 1},
-else if UserInput = àà      ; RU
+else if UserInput = Ğ°Ğ°      ; RU
     Send, {backspace 1},
-else if UserInput = ûà
-    Send, {backspace 1}ö
-else if UserInput = ôà
-    Send, {backspace 1}ı
+else if UserInput = Ñ‹Ğ°
+    Send, {backspace 1}Ñ†
+else if UserInput = Ñ„Ğ°
+    Send, {backspace 1}Ñ
 return
 
 
 ;~+sc21::  ; F
 ~+f::  ; F
-Input, UserInput, I T0.7  *,,FA,FS,FD,ÀÔ,ÀÛ,ÀÂ,ÔÀ,ÛÀ,A,S,D,F,Ô,Û,Â,À
+Input, UserInput, I T0.7  *,,FA,FS,FD,ĞĞ¤,ĞĞ«,ĞĞ’,Ğ¤Ğ,Ğ«Ğ,A,S,D,F,Ğ¤,Ğ«,Ğ’,Ğ
 SetKeyDelay, -1
 if UserInput = FA
     Send, {backspace 1}B
-else if UserInput = ÀÔ        ; fa to b
-    Send, {backspace 1}Ç
+else if UserInput = ĞĞ¤        ; fa to b
+    Send, {backspace 1}Ğ—
 else if UserInput = FS        ; fs to k
     Send, {backspace 1}K
-else if UserInput = ÀÛ        ;RU
-    Send, {backspace 1}×
+else if UserInput = ĞĞ«        ;RU
+    Send, {backspace 1}Ğ§
 else if UserInput = FD        ; fd to z
     Send, {backspace 1}Z
-else if UserInput = ÀÂ        ;RU
-    Send, {backspace 1}Ø
+else if UserInput = ĞĞ’        ;RU
+    Send, {backspace 1}Ğ¨
 else if UserInput = A
     Send, {backspace 1}U
-else if UserInput = Ô         ; fa to u
-    Send, {backspace 1}Ä
+else if UserInput = Ğ¤         ; fa to u
+    Send, {backspace 1}Ğ”
 else if UserInput = S
     Send, {backspace 1}D
-else if UserInput = Û        ; fs to d
-    Send, {backspace 1}Ë
+else if UserInput = Ğ«        ; fs to d
+    Send, {backspace 1}Ğ›
 else if UserInput = D        ; fd to q
     Send, {backspace 1}Q
-else if UserInput = Â        ;RU
-    Send, {backspace 1}Æ
+else if UserInput = Ğ’        ;RU
+    Send, {backspace 1}Ğ–
 else if UserInput = F
     Send, {backspace 1},
-else if UserInput = À        ; RU
+else if UserInput = Ğ        ; RU
     Send, {backspace 1},
-else if UserInput = ÛÀ
+else if UserInput = Ğ«Ğ
     Send, {backspace 1}
-else if UserInput = ÔÀ
-    Send, {backspace 1}İ
+else if UserInput = Ğ¤Ğ
+    Send, {backspace 1}Ğ­
 return
 
 /*
