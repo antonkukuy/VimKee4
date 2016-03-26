@@ -186,9 +186,13 @@ Return
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 ~a::  ; ;
-Input, UserInput, I C T0.7 *,,as,ad,af,фф,фы,фв,фа,вф,аф,s,d,f,ы,в,а
+Input, UserInput, I C T0.7 *,,aa,as,ad,af,фф,фы,фв,фа,вф,аф,s,d,f,ы,в,а,фф
 
-if UserInput = as
+if UserInput = aa
+    Send, {backspace 1}q
+else if UserInput = фф
+    Send, {backspace 1}й
+else if UserInput = as
     Send, {backspace 1}n
 else if UserInput = фы
     Send, {backspace 1}т
@@ -203,11 +207,11 @@ else if UserInput = фа
 else if UserInput = s
     Send, {backspace 1}l
 else if UserInput = ы
-    Send, {backspace 1}к
+    Send, {backspace 1}д
 else if UserInput = d
     Send, {backspace 1}i
 else if UserInput = в
-    Send, {backspace 1}н
+    Send, {backspace 1}ш
 else if UserInput = f
     Send, {backspace 1}w
 else if UserInput = а
@@ -231,33 +235,36 @@ return
 
 ;~+sc1E::  ; a
 ~+a::  ; a
-Input, UserInput, I C T0.7 *,,AS,AD,AF,AA,ФФ,ФЫ,ФВ,ФА,ФФ,ВФ,АФ,S,D,F,Ы,В,А
-SetKeyDelay, -1
+Input, UserInput, I C T0.7 *,,AA,AS,AD,AF,ФФ,ФЫ,ФВ,ФА,ВФ,АФ,S,D,F,Ы,В,А,ФФ
 
-if UserInput = AS
+if UserInput = AA
+    Send, {backspace 1}Q
+else if UserInput = ФФ
+    Send, {backspace 1}Й
+else if UserInput = AS
     Send, {backspace 1}N
 else if UserInput = ФЫ
     Send, {backspace 1}Т
 else if UserInput = AD
     Send, {backspace 1}P
 else if UserInput = ФВ
-    Send, {backspace 1}Г
+    Send, {backspace 1}З
 else if UserInput = AF
     Send, {backspace 1}J
 else if UserInput = ФА
-    Send, {backspace 1}Х
+    Send, {backspace 1}О
 else if UserInput = S
     Send, {backspace 1}L
 else if UserInput = Ы
-    Send, {backspace 1}К
+    Send, {backspace 1}Д
 else if UserInput = D
     Send, {backspace 1}I
 else if UserInput = В
-    Send, {backspace 1}Н
+    Send, {backspace 1}Ш
 else if UserInput = F
     Send, {backspace 1}W
-else if UserInput = А      ; RU
-    Send, {backspace 1}У
+else if UserInput = А
+    Send, {backspace 1}Ц
 
 
 /*
@@ -284,80 +291,64 @@ return
 
 ;~sc1F::   ;s
 ~s::   ;s
-Input, UserInput, I C T0.7 *,,ss,sa,sd,sf,ыф,ыв,ыа,аы,вы,a,d,f,ф,ы,а
+Input, UserInput, I C T0.7 *,,sa,sd,sf,ыф,ыв,ыа,аы,вы,a,d,f,ф,ы,а
 SetKeyDelay, -1
 if UserInput = sa
     Send, {backspace 1}m
 else if UserInput = ыф
-    Send, {backspace 1}п
+    Send, {backspace 1}ь
 else if UserInput = sd
     Send, {backspace 1}f
 else if UserInput = ыв
-    Send, {backspace 1}я
+    Send, {backspace 1}а
 else if UserInput = sf
     Send, {backspace 1}g
 else if UserInput = ыа
-    Send, {backspace 1}ы
+    Send, {backspace 1}п
 else if UserInput = a
     Send, {backspace 1}o         ;RU
 else if UserInput = ф
-    Send, {backspace 1}и
-else if UserInput = ss
-    Send, {backspace 1}a         ; ENG
-else if UserInput = ыы
-    Send, {backspace 1}а         ; RU
+    Send, {backspace 1}щ
 else if UserInput = d
-    Send, {backspace 1}h
+    Send, {backspace 1}a
 else if UserInput = в
-    Send, {backspace 1}р         ;RU
+    Send, {backspace 1}ф         ;RU
 else if UserInput = f
     Send, {backspace 1}c         ;ENG
 else if UserInput = а            ;RU
-    Send, {backspace 1}м
-else if UserInput = аы
-    Send, {backspace 1}с         ;RU
-else if UserInput = вы
-    Send, {backspace 1}ъ
+    Send, {backspace 1}с
 return
 
 
 ;~+sc1F::       ;s
 ~+s::           ;s
 
-Input, UserInput, I C T0.7 *,,SS,SA,SD,SF,ЫФ,ЫВ,ЫА,АЫ,ВЫ,A,D,F,Ф,Ы,А
+Input, UserInput, I C T0.7 *,,SA,SD,SF,ЫФ,ЫВ,ЫА,АЫ,ВЫ,A,D,F,Ф,Ы,А
 SetKeyDelay, -1
 if UserInput = SA
     Send, {backspace 1}M
 else if UserInput = ЫФ
-    Send, {backspace 1}П
+    Send, {backspace 1}Ь
 else if UserInput = SD
     Send, {backspace 1}F
 else if UserInput = ЫВ
-    Send, {backspace 1}Я
+    Send, {backspace 1}А
 else if UserInput = SF
     Send, {backspace 1}G
 else if UserInput = ЫА
-    Send, {backspace 1}Ы
+    Send, {backspace 1}П
 else if UserInput = A
-    Send, {backspace 1}O         ;RU
+    Send, {backspace 1}O         ;ENG
 else if UserInput = Ф
-    Send, {backspace 1}И
-else if UserInput = SS
-    Send, {backspace 1}A         ; ENG
-else if UserInput = ЫЫ
-    Send, {backspace 1}А         ; RU
+    Send, {backspace 1}Щ
 else if UserInput = D
-    Send, {backspace 1}H
+    Send, {backspace 1}A
 else if UserInput = В
-    Send, {backspace 1}Р         ;RU
+    Send, {backspace 1}Ф         ;RU
 else if UserInput = F
     Send, {backspace 1}C         ;ENG
-else if UserInput = А            ;ru
-    Send, {backspace 1}М
-else if UserInput = АЫ
+else if UserInput = А
     Send, {backspace 1}С         ;RU
-else if UserInput = ВЫ
-    Send, {backspace 1}Ъ
 return
 
 /*
@@ -369,74 +360,62 @@ return
 
 ;~sc20::  ; d
 ~d::  ; d
-Input, UserInput, I C T0.7 *,,dd,da,ds,df,вв,вф,вы,ва,ыв,a,f,ф,ы,а
+Input, UserInput, I C T0.7 *,,da,ds,df,вф,вы,ва,a,s,f,ф,ы,а
 SetKeyDelay, -1
 if UserInput = da
     Send, {backspace 1}r
 else if UserInput = вф
-    Send, {backspace 1}в         ;RU
+    Send, {backspace 1}к         ;RU
 else if UserInput = ds
     Send, {backspace 1}s
 else if UserInput = вы
-    Send, {backspace 1}с         ;RU
+    Send, {backspace 1}ы         ;RU
 else if UserInput = df
     Send, {backspace 1}x
 else if UserInput = ва
-    Send, {backspace 1}й
+    Send, {backspace 1}ч
 else if UserInput = a
     Send, {backspace 1}y
 else if UserInput = ф
-    Send, {backspace 1}ь
+    Send, {backspace 1}н
 else if UserInput = s
-    Send, {backspace 1}t
-else if UserInput = ы
-    Send, {backspace 1}е         ;RU
-else if UserInput = dd
     Send, {backspace 1}e
-else if UserInput = вв
-    Send, {backspace 1}о         ;RU
+else if UserInput = ы
+    Send, {backspace 1}у         ;RU
 else if UserInput = f
-    Send, {backspace 1}v
+    Send, {backspace 1}h
 else if UserInput = а
-    Send, {backspace 1}б         ;RU
-else if UserInput = ыв
-    Send, {backspace 1}ю
+    Send, {backspace 1}р         ;RU
 return
 
 ;~+sc20::  ; D
 ~+d::  ; D
-Input, UserInput, I C T0.7 *,,DD,DA,DS,DF,ВВ,ВФ,ВЫ,ВА,ЫВ,A,S,F,Ф,Ы,В,А
+Input, UserInput, I C T0.7 *,,DA,DS,DF,ВФ,ВЫ,ВА,A,S,F,Ф,Ы,А
 SetKeyDelay, -1
 if UserInput = DA
     Send, {backspace 1}R
 else if UserInput = ВФ
-    Send, {backspace 1}В      ;RU
+    Send, {backspace 1}К         ;RU
 else if UserInput = DS
     Send, {backspace 1}S
 else if UserInput = ВЫ
-    Send, {backspace 1}С      ;RU
+    Send, {backspace 1}Ы         ;RU
 else if UserInput = DF
     Send, {backspace 1}X
 else if UserInput = ВА
-    Send, {backspace 1}Й
+    Send, {backspace 1}Ч
 else if UserInput = A
     Send, {backspace 1}Y
 else if UserInput = Ф
-    Send, {backspace 1}Ь
+    Send, {backspace 1}Н
 else if UserInput = S
-    Send, {backspace 1}T
-else if UserInput = Ы
-    Send, {backspace 1}Е      ;RU
-else if UserInput = DD
     Send, {backspace 1}E
-else if UserInput = ВВ
-    Send, {backspace 1}О      ;RU
+else if UserInput = Ы
+    Send, {backspace 1}У         ;RU
 else if UserInput = F
-    Send, {backspace 1}V
+    Send, {backspace 1}X
 else if UserInput = А
-    Send, {backspace 1}Б      ;RU
-else if UserInput = ЫВ
-    Send, {backspace 1}Ю
+    Send, {backspace 1}Ч         ;RU
 return
 
 /*
@@ -447,79 +426,71 @@ return
 
 ;~sc21::  ; f
 ~f::  ; f
-Input, UserInput, I T0.7  *,,ff,fa,fs,fd,аа,аф,аы,ав,фа,ыа,a,s,d,ф,ы,в
+Input, UserInput, I T0.7  *,,ff,fa,fs,fd,аа,аф,аы,ав,a,s,d,ф,ы,в
 SetKeyDelay, -1
 if UserInput = fa
     Send, {backspace 1}b
 else if UserInput = аф        ; fa to b
-    Send, {backspace 1}з
+    Send, {backspace 1}и
 else if UserInput = fs
     Send, {backspace 1}k
 else if UserInput = аы        ; fs to k
-    Send, {backspace 1}ч
+    Send, {backspace 1}л
 else if UserInput = fd
-    Send, {backspace 1}z
+    Send, {backspace 1}v
 else if UserInput = ав  ; fd to z
-    Send, {backspace 1}ш
+    Send, {backspace 1}м
 else if UserInput = a
     Send, {backspace 1}u
-else if UserInput = ф  ; fa to u
-    Send, {backspace 1}д
+else if UserInput = ф
+    Send, {backspace 1}г
 else if UserInput = s
     Send, {backspace 1}d
-else if UserInput = ы  ; fs to d
-    Send, {backspace 1}л
+else if UserInput = ы
+    Send, {backspace 1}в
 else if UserInput = d
-    Send, {backspace 1}q
+    Send, {backspace 1}t
 else if UserInput = в  ; fd to q
-    Send, {backspace 1}ж
+    Send, {backspace 1}е
 else if UserInput = ff
-    Send, {backspace 1},
+    Send, {backspace 1}z
 else if UserInput = аа      ; RU
-    Send, {backspace 1},
-else if UserInput = ыа
-    Send, {backspace 1}ц
-else if UserInput = фа
-    Send, {backspace 1}э
+    Send, {backspace 1}я
 return
 
 
 ;~+sc21::  ; F
 ~+f::  ; F
-Input, UserInput, I T0.7  *,,FA,FS,FD,АФ,АЫ,АВ,ФА,ЫА,A,S,D,F,Ф,Ы,В,А
+Input, UserInput, I T0.7  *,,FF,FA,FS,FD,АА,АФ,АЫ,АВ,A,S,D,Ф,Ы,В
 SetKeyDelay, -1
 if UserInput = FA
     Send, {backspace 1}B
-else if UserInput = АФ        ; fa to b
-    Send, {backspace 1}З
-else if UserInput = FS        ; fs to k
+else if UserInput = аф        ; FA TO B
+    Send, {backspace 1}И
+else if UserInput = FS
     Send, {backspace 1}K
-else if UserInput = АЫ        ;RU
-    Send, {backspace 1}Ч
-else if UserInput = FD        ; fd to z
-    Send, {backspace 1}Z
-else if UserInput = АВ        ;RU
-    Send, {backspace 1}Ш
+else if UserInput = аы        ; FS TO K
+    Send, {backspace 1}Л
+else if UserInput = FD
+    Send, {backspace 1}V
+else if UserInput = ав  ; FD TO Z
+    Send, {backspace 1}М
 else if UserInput = A
     Send, {backspace 1}U
-else if UserInput = Ф         ; fa to u
-    Send, {backspace 1}Д
+else if UserInput = Ф
+    Send, {backspace 1}Г
 else if UserInput = S
     Send, {backspace 1}D
-else if UserInput = Ы        ; fs to d
-    Send, {backspace 1}Л
-else if UserInput = D        ; fd to q
-    Send, {backspace 1}Q
-else if UserInput = В        ;RU
-    Send, {backspace 1}Ж
-else if UserInput = F
-    Send, {backspace 1},
-else if UserInput = А        ; RU
-    Send, {backspace 1},
-else if UserInput = ЫА
-    Send, {backspace 1}
-else if UserInput = ФА
-    Send, {backspace 1}Э
+else if UserInput = Ы
+    Send, {backspace 1}В
+else if UserInput = D
+    Send, {backspace 1}T
+else if UserInput = в  ; FD TO Q
+    Send, {backspace 1}Е
+else if UserInput = FF
+    Send, {backspace 1}Z
+else if UserInput = аа      ; ru
+    Send, {backspace 1}Я
 return
 
 /*
