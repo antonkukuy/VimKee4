@@ -186,7 +186,7 @@ Return
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 ~a::  ; ;
-Input, UserInput, I C T0.7 *,,aa,as,ad,af,фф,фы,фв,фа,вф,аф,s,d,f,ы,в,а,фф
+Input, UserInput, I C T0.45 *,,aa,as,ad,af,фф,фы,фв,фа,вф,аф,s,d,f,ы,в,а,фф
 
 if UserInput = aa
     Send, {backspace 1}q
@@ -235,7 +235,7 @@ return
 
 ;~+sc1E::  ; a
 ~+a::  ; a
-Input, UserInput, I C T0.7 *,,AA,AS,AD,AF,ФФ,ФЫ,ФВ,ФА,ВФ,АФ,S,D,F,Ы,В,А,ФФ
+Input, UserInput, I C T0.45 *,,AA,AS,AD,AF,ФФ,ФЫ,ФВ,ФА,ВФ,АФ,S,D,F,Ы,В,А,ФФ
 
 if UserInput = AA
     Send, {backspace 1}Q
@@ -291,7 +291,7 @@ return
 
 ;~sc1F::   ;s
 ~s::   ;s
-Input, UserInput, I C T0.7 *,,sa,sd,sf,ыф,ыв,ыа,аы,вы,a,d,f,ф,ы,а
+Input, UserInput, I C T0.45 *,,sa,sd,sf,ыф,ыв,ыа,аы,вы,a,d,f,ф,ы,а
 SetKeyDelay, -1
 if UserInput = sa
     Send, {backspace 1}m
@@ -323,7 +323,7 @@ return
 ;~+sc1F::       ;s
 ~+s::           ;s
 
-Input, UserInput, I C T0.7 *,,SA,SD,SF,ЫФ,ЫВ,ЫА,АЫ,ВЫ,A,D,F,Ф,Ы,А
+Input, UserInput, I C T0.45 *,,SA,SD,SF,ЫФ,ЫВ,ЫА,АЫ,ВЫ,A,D,F,Ф,Ы,А
 SetKeyDelay, -1
 if UserInput = SA
     Send, {backspace 1}M
@@ -360,7 +360,7 @@ return
 
 ;~sc20::  ; d
 ~d::  ; d
-Input, UserInput, I C T0.7 *,,da,ds,df,вф,вы,ва,a,s,f,ф,ы,а
+Input, UserInput, I C T0.45 *,,da,ds,df,вф,вы,ва,a,s,f,ф,ы,а
 SetKeyDelay, -1
 if UserInput = da
     Send, {backspace 1}r
@@ -390,7 +390,7 @@ return
 
 ;~+sc20::  ; D
 ~+d::  ; D
-Input, UserInput, I C T0.7 *,,DA,DS,DF,ВФ,ВЫ,ВА,A,S,F,Ф,Ы,А
+Input, UserInput, I C T0.45 *,,DA,DS,DF,ВФ,ВЫ,ВА,A,S,F,Ф,Ы,А
 SetKeyDelay, -1
 if UserInput = DA
     Send, {backspace 1}R
@@ -426,7 +426,7 @@ return
 
 ;~sc21::  ; f
 ~f::  ; f
-Input, UserInput, I T0.7  *,,ff,fa,fs,fd,аа,аф,аы,ав,a,s,d,ф,ы,в
+Input, UserInput, I T0.45  *,,ff,fa,fs,fd,аа,аф,аы,ав,a,s,d,ф,ы,в
 SetKeyDelay, -1
 if UserInput = fa
     Send, {backspace 1}b
@@ -461,7 +461,7 @@ return
 
 ;~+sc21::  ; F
 ~+f::  ; F
-Input, UserInput, I T0.7  *,,FF,FA,FS,FD,АА,АФ,АЫ,АВ,A,S,D,Ф,Ы,В
+Input, UserInput, I T0.45  *,,FF,FA,FS,FD,АА,АФ,АЫ,АВ,A,S,D,Ф,Ы,В
 SetKeyDelay, -1
 if UserInput = FA
     Send, {backspace 1}B
