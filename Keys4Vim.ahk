@@ -186,7 +186,7 @@ Return
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 ~a::  ; ;
-Input, UserInput, I C T0.45 *,,aa,as,ad,af,ôô,ôû,ôâ,ôà,âô,àô,s,d,f,û,â,à,ôô
+Input, UserInput, I C T0.38 *,,aa,as,ad,af,ôô,ôû,ôâ,ôà,âô,àô,s,d,f,û,â,à,ôô
 
 if UserInput = aa
     Send, {backspace 1}q
@@ -235,7 +235,7 @@ return
 
 ;~+sc1E::  ; a
 ~+a::  ; a
-Input, UserInput, I C T0.45 *,,AA,AS,AD,AF,ÔÔ,ÔÛ,ÔÂ,ÔÀ,ÂÔ,ÀÔ,S,D,F,Û,Â,À,ÔÔ
+Input, UserInput, I C T0.38 *,,AA,AS,AD,AF,ÔÔ,ÔÛ,ÔÂ,ÔÀ,ÂÔ,ÀÔ,S,D,F,Û,Â,À,ÔÔ
 
 if UserInput = AA
     Send, {backspace 1}Q
@@ -291,7 +291,7 @@ return
 
 ;~sc1F::   ;s
 ~s::   ;s
-Input, UserInput, I C T0.45 *,,sa,sd,sf,ûô,ûâ,ûà,àû,âû,a,d,f,ô,û,à
+Input, UserInput, I C T0.38 *,,sa,sd,sf,ûô,ûâ,ûà,àû,âû,a,d,f,ô,û,à
 SetKeyDelay, -1
 if UserInput = sa
     Send, {backspace 1}m
@@ -323,7 +323,7 @@ return
 ;~+sc1F::       ;s
 ~+s::           ;s
 
-Input, UserInput, I C T0.45 *,,SA,SD,SF,ÛÔ,ÛÂ,ÛÀ,ÀÛ,ÂÛ,A,D,F,Ô,Û,À
+Input, UserInput, I C T0.38 *,,SA,SD,SF,ÛÔ,ÛÂ,ÛÀ,ÀÛ,ÂÛ,A,D,F,Ô,Û,À
 SetKeyDelay, -1
 if UserInput = SA
     Send, {backspace 1}M
@@ -360,7 +360,7 @@ return
 
 ;~sc20::  ; d
 ~d::  ; d
-Input, UserInput, I C T0.45 *,,da,ds,df,âô,âû,âà,a,s,f,ô,û,à
+Input, UserInput, I C T0.38 *,,da,ds,df,âô,âû,âà,a,s,f,ô,û,à
 SetKeyDelay, -1
 if UserInput = da
     Send, {backspace 1}r
@@ -390,7 +390,7 @@ return
 
 ;~+sc20::  ; D
 ~+d::  ; D
-Input, UserInput, I C T0.45 *,,DA,DS,DF,ÂÔ,ÂÛ,ÂÀ,A,S,F,Ô,Û,À
+Input, UserInput, I C T0.38 *,,DA,DS,DF,ÂÔ,ÂÛ,ÂÀ,A,S,F,Ô,Û,À
 SetKeyDelay, -1
 if UserInput = DA
     Send, {backspace 1}R
@@ -426,7 +426,7 @@ return
 
 ;~sc21::  ; f
 ~f::  ; f
-Input, UserInput, I T0.45  *,,ff,fa,fs,fd,àà,àô,àû,àâ,a,s,d,ô,û,â
+Input, UserInput, I T0.38  *,,ff,fa,fs,fd,àà,àô,àû,àâ,a,s,d,ô,û,â
 SetKeyDelay, -1
 if UserInput = fa
     Send, {backspace 1}b
@@ -461,7 +461,7 @@ return
 
 ;~+sc21::  ; F
 ~+f::  ; F
-Input, UserInput, I T0.45  *,,FF,FA,FS,FD,ÀÀ,ÀÔ,ÀÛ,ÀÂ,A,S,D,Ô,Û,Â
+Input, UserInput, I T0.38  *,,FF,FA,FS,FD,ÀÀ,ÀÔ,ÀÛ,ÀÂ,A,S,D,Ô,Û,Â
 SetKeyDelay, -1
 if UserInput = FA
     Send, {backspace 1}B
