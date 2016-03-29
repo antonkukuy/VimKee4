@@ -192,29 +192,16 @@ SetKeyDelay, -1
 ;   Send, {vk51}             ;é
 ;======================= a =======================
 
-vk41 & vk53::                ;a & s
-    Send, {vk4C}             ;l
-Return
-vk41 & vk44::                ;a & d
-    Send, {vk49}             ;i
-Return
-vk41 & vk46::                ;a & f
-    Send, {vk57}             ;w
-Return
+vk41 & vk53::Send, {vk4C}                ;a & s ;l
+vk41 & vk44::Send, {vk49}                ;a & d ;i
+vk41 & vk46::Send, {vk57}                ;a & f ;w
 
-vk5A & vk58::                ;z & x
-    Send, {vk4E}             ;n
-Return
-vk5A & vk43::                ;z & c
-    Send, {vk50}             ;p
-Return
-vk5A & vk56::                ;z & v
-    Send, {vk4A}             ;j
-Return
+vk5A & vk58::Send, {vk4E}                ;z & x ;n
+vk5A & vk43::Send, {vk50}                ;z & c ;p
+vk5A & vk56::Send, {vk4A}                ;z & v ;j
 
-
-
-vkA1 vk41  & vk53::                ;a & s
++vk41::Gosub, vk53
+vk53::                ;a & s
     Send, +{vk4C}             ;l
 Return
 + & vk41 & vk44::                ;a & d
@@ -235,25 +222,13 @@ Return
 Return
 
 ;======================= s =======================
-vk53 & vk41::                   ;s & a
-    Send, {vk4F}                ;o
-Return
-vk53 & vk44::                   ;s & d
-    Send, {vk41}                ;a
-Return
-vk53 & vk46::                   ;s & f
-    Send, {vk43}                ;c
-Return
+vk53 & vk41::Send, {vk4F}                   ;s & a ;o
+vk53 & vk44::Send, {vk41}                   ;s & d ;a
+vk53 & vk46::Send, {vk43}                   ;s & f ;c
 
-vk58 & vk5A::                   ;x & z
-    Send, {vk4D}                ;m
-Return
-vk58 & vk43::                   ;x & c
-    Send, {vk46}                ;f
-Return
-vk58 & vk56::                   ;x & v
-    Send, {vk47}                ;g
-Return
+vk58 & vk5A::Send, {vk4D}                   ;x & z ;m
+vk58 & vk43::Send, {vk46}                   ;x & c ;f
+vk58 & vk56::Send, {vk47}                   ;x & v ;g
 
 ~d::  ; d
 Input, UserInput, I C T0.3 *,,a,s,f,ô,û,à
