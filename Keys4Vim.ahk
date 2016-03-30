@@ -45,7 +45,8 @@ Tooltip, K, 1336, 766
 #MaxHotkeysPerInterval 70 ; Max hotkeys perinterval (default 50).
 
 
-~` & F2::ExitApp
+<+<!r::Reload  ; Assign LShift-LAlt-R as a hotkey to restart the script.
+~vkC0 & F2::ExitApp     ;` & F2
 Return
 
 +Space::
