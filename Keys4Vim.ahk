@@ -185,80 +185,55 @@ Return
 
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
-~a::  ; ;
-Input, UserInput, I C T0.3 *,,a,s,d,f,ô,û,â,à
 SetKeyDelay, -1
-if UserInput = a
-    Send, {backspace 1}q
-else if UserInput = ô
-    Send, {backspace 1}é
-else if UserInput = s
-    Send, {backspace 1}l
-else if UserInput = û
-    Send, {backspace 1}ä
-else if UserInput = d
-    Send, {backspace 1}i
-else if UserInput = â
-    Send, {backspace 1}ø
-else if UserInput = f
-    Send, {backspace 1}w
-else if UserInput = à
-    Send, {backspace 1}ö
-Return
+;======================= a =======================
 
-~z::  ; ;
-Input, UserInput, I C T0.3 *,,x,c,v,÷,ñ,ì
-SetKeyDelay, -1
-if UserInput = x
-    Send, {backspace 1}n
-else if UserInput = ÷
-    Send, {backspace 1}ò
-else if UserInput = c
-    Send, {backspace 1}p
-else if UserInput = ñ
-    Send, {backspace 1}ç
-else if UserInput = v
-    Send, {backspace 1}j
-else if UserInput = ì
-    Send, {backspace 1}î
-Return
+~vk41 & vk53::Send, {vk4C}                ;a & s ;l
+~vk41 & vk44::Send, {vk49}                ;a & d ;i
+~vk41 & vk46::Send, {vk57}                ;a & f ;w
+
+~vk5A & vk58::Send, {vk4E}                ;z & x ;n
+~vk5A & vk43::Send, {vk50}                ;z & c ;p
+~vk5A & vk56::Send, {vk4A}                ;z & v ;j
+
+
 
 ~+a::  ; ;
 Input, UserInput, I C T0.3 *,,A,S,D,F,Ô,Û,Â,À
 SetKeyDelay, -1
 if UserInput = A
-    Send, {backspace 1}Q
+    Send, Q
 else if UserInput = Ô
-    Send, {backspace 1}É
+    Send, É
 else if UserInput = S
-    Send, {backspace 1}L
+    Send, +{vk4C}   ;L
 else if UserInput = Û
-    Send, {backspace 1}Ä
+    Send, Ä
 else if UserInput = D
-    Send, {backspace 1}I
+    Send, I
 else if UserInput = Â
-    Send, {backspace 1}Ø
+    Send, Ø
 else if UserInput = F
-    Send, {backspace 1}W
+    Send, W
 else if UserInput = À
-    Send, {backspace 1}Ö
+    Send, Ö
 Return
 
 ~+z::  ; ;
 Input, UserInput, I C T0.3 *,,X,C,V,×,Ñ,Ì
 SetKeyDelay, -1
 if UserInput = X
-    Send, {backspace 1}N
+    Send, N
 else if UserInput = ×
-    Send, {backspace 1}Ò
+    Send, Ò
 else if UserInput = C
-    Send, {backspace 1}P
+    Send, P
 else if UserInput = Ñ
-    Send, {backspace 1}Ç
+    Send, Ç
 else if UserInput = V
-    Send, {backspace 1}J
+    Send, J
 else if UserInput = Ì
-    Send, {backspace 1}Î
+    Send, Î
 Return
 
 ~s::
