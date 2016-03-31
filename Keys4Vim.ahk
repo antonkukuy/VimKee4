@@ -188,190 +188,43 @@ Return
 SetKeyDelay, -1
 
 
-;vk41 & vk41::                ;a & a
-;   Send, {vk51}             ;é
+vk46 & vk5A::Send, {vk5A}           ;f & z ;z
+vk41 & vk56::Send, {vk51}           ;a & v ;q
 ;======================= a =======================
-
-vk41 & vk53::Send, {vk4C}                ;a & s ;l
-vk41 & vk44::Send, {vk49}                ;a & d ;i
-vk41 & vk46::Send, {vk57}                ;a & f ;w
-
-vk5A & vk58::Send, {vk4E}                ;z & x ;n
-vk5A & vk43::Send, {vk50}                ;z & c ;p
-vk5A & vk56::Send, {vk4A}                ;z & v ;j
-
-+vk41::Gosub, vk53
-vk53::                ;a & s
-    Send, +{vk4C}             ;l
-Return
-+ & vk41 & vk44::                ;a & d
-    Send, +{vk49}             ;i
-Return
-+ & vk41 & vk46::                ;a & f
-    Send, +{vk57}             ;w
-Return
-
-+ & vk5A & vk58::                ;z & x
-    Send, +{vk4E}             ;n
-Return
-+ & vk5A & vk43::                ;z & c
-    Send, +{vk50}             ;p
-Return
-+ & vk5A & vk56::                ;z & v
-    Send, +{vk4A}             ;j
-Return
+vk41 & vk53::Send, {vk4C}           ;a & s ;l
+vk41 & vk44::Send, {vk49}           ;a & d ;i
+vk41 & vk46::Send, {vk57}           ;a & f ;w
+;======================= z =======================
+vk5A & vk58::Send, {vk4E}           ;z & x ;n
+vk5A & vk43::Send, {vk50}           ;z & c ;p
+vk5A & vk56::Send, {vk4A}           ;z & v ;j
 
 ;======================= s =======================
-vk53 & vk41::Send, {vk4F}                   ;s & a ;o
-vk53 & vk44::Send, {vk41}                   ;s & d ;a
-vk53 & vk46::Send, {vk43}                   ;s & f ;c
+vk53 & vk41::Send, {vk4F}           ;s & a ;o
+vk53 & vk44::Send, {vk41}           ;s & d ;a
+vk53 & vk46::Send, {vk43}           ;s & f ;c
+;======================= x =======================
+vk58 & vk5A::Send, {vk4D}           ;x & z ;m
+vk58 & vk43::Send, {vk46}           ;x & c ;f
+vk58 & vk56::Send, {vk47}           ;x & v ;g
 
-vk58 & vk5A::Send, {vk4D}                   ;x & z ;m
-vk58 & vk43::Send, {vk46}                   ;x & c ;f
-vk58 & vk56::Send, {vk47}                   ;x & v ;g
+;======================= d =======================
+vk44 & vk41::Send, {vk59}           ;d & a ;y
+vk44 & vk53::Send, {vk45}           ;d & s ;e
+vk44 & vk46::Send, {vk48}           ;d & f ;h
+;======================= c =======================
+vk43 & vk5A::Send, {vk52}           ;c & z ;r
+vk43 & vk58::Send, {vk53}           ;c & x ;s
+vk43 & vk56::Send, {vk58}           ;c & v ;x
 
-~d::  ; d
-Input, UserInput, I C T0.3 *,,a,s,f,ô,û,à
-SetKeyDelay, -1
-if UserInput = a
-    Send, {backspace 1}y
-else if UserInput = ô
-    Send, {backspace 1}í
-else if UserInput = s
-    Send, {backspace 1}e
-else if UserInput = û
-    Send, {backspace 1}ó
-else if UserInput = f
-    Send, {backspace 1}h
-else if UserInput = à
-    Send, {backspace 1}ð
-return
-
-~c::  ; d
-Input, UserInput, I C T0.3 *,,z,x,v,ÿ,÷,ì
-SetKeyDelay, -1
-if UserInput = z
-    Send, {backspace 1}r
-else if UserInput = ÿ
-    Send, {backspace 1}ê
-else if UserInput = x
-    Send, {backspace 1}s
-else if UserInput = ÷
-    Send, {backspace 1}û
-else if UserInput = v
-    Send, {backspace 1}x
-else if UserInput = ì
-    Send, {backspace 1}÷
-Return
-
-~+d::  ; d
-Input, UserInput, I C T0.3 *,,A,S,F,Ô,Û,À
-SetKeyDelay, -1
-if UserInput = A
-    Send, {backspace 1}Y
-else if UserInput = Ô
-    Send, {backspace 1}Í
-else if UserInput = S
-    Send, {backspace 1}E
-else if UserInput = Û
-    Send, {backspace 1}Ó
-else if UserInput = F
-    Send, {backspace 1}H
-else if UserInput = À
-    Send, {backspace 1}Ð
-return
-
-~+c::  ; d
-Input, UserInput, I C T0.3 *,,Z,X,V,ß,×,Ì
-SetKeyDelay, -1
-if UserInput = Z
-    Send, {backspace 1}R
-else if UserInput = ß
-    Send, {backspace 1}Ê
-else if UserInput = X
-    Send, {backspace 1}S
-else if UserInput = ×
-    Send, {backspace 1}Û
-else if UserInput = V
-    Send, {backspace 1}X
-else if UserInput = Ì
-    Send, {backspace 1}×
-Return
-
-
-~f::  ; f
-Input, UserInput, I T0.3  *,,a,s,d,f,ô,û,â,à
-SetKeyDelay, -1
-if UserInput = a
-    Send, {backspace 1}u
-else if UserInput = ô
-    Send, {backspace 1}ã
-else if UserInput = s
-    Send, {backspace 1}d
-else if UserInput = û
-    Send, {backspace 1}â
-else if UserInput = d
-    Send, {backspace 1}t
-else if UserInput = â
-    Send, {backspace 1}å
-else if UserInput = f
-    Send, {backspace 1}z
-else if UserInput = à
-    Send, {backspace 1}ÿ
-return
-~v::  ; f
-Input, UserInput, I T0.3  *,,z,x,c,ÿ,÷,ñ
-SetKeyDelay, -1
-if UserInput = z
-    Send, {backspace 1}b
-else if UserInput = ÿ
-    Send, {backspace 1}è
-else if UserInput = x
-    Send, {backspace 1}k
-else if UserInput = ÷
-    Send, {backspace 1}ë
-else if UserInput = c
-    Send, {backspace 1}v
-else if UserInput = ñ
-    Send, {backspace 1}ì
-Return
-
-~+f::  ; f
-Input, UserInput, I T0.3  *,,A,S,D,F,Ô,Û,Â,À
-SetKeyDelay, -1
-if UserInput = A
-    Send, {backspace 1}U
-else if UserInput = Ô
-    Send, {backspace 1}Ã
-else if UserInput = S
-    Send, {backspace 1}D
-else if UserInput = Û
-    Send, {backspace 1}Â
-else if UserInput = D
-    Send, {backspace 1}T
-else if UserInput = Â
-    Send, {backspace 1}Å
-else if UserInput = F
-    Send, {backspace 1}Z
-else if UserInput = À
-    Send, {backspace 1}ß
-return
-~+v::  ; f
-Input, UserInput, I T0.3  *,,Z,X,C,ß,×,Ñ
-SetKeyDelay, -1
-if UserInput = Z
-    Send, {backspace 1}B
-else if UserInput = ß
-    Send, {backspace 1}È
-else if UserInput = X
-    Send, {backspace 1}K
-else if UserInput = ×
-    Send, {backspace 1}Ë
-else if UserInput = C
-    Send, {backspace 1}V
-else if UserInput = Ñ
-    Send, {backspace 1}Ì
-Return
+;======================= f =======================
+vk46 & vk41::Send, {vk55}           ;f & a ;u
+vk46 & vk53::Send, {vk44}           ;f & s ;d
+vk46 & vk44::Send, {vk54}           ;f & d ;t
+;======================= v =======================
+vk56 & vk5A::Send, {vk42}           ;v & z ;b
+vk56 & vk58::Send, {vk4B}           ;v & x ;k
+vk56 & vk43::Send, {vk56}           ;v & c ;v
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 
