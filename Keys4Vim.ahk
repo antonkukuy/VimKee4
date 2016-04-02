@@ -27,9 +27,8 @@ Vim_g=0
 Vim_n=0
 VimLineCopy=0
 
-ToolTipFont("7", "Verdana")
-ToolTipColor("Red", "Blue")
-Tooltip, K, 1336, 766
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("K", 1326, 766, 2,HFONT, "Red", "Black",,"S")
 
 ; }}}
 
@@ -54,19 +53,18 @@ Suspend
 ;ToolTip % (A_IsSuspended) ? "S": Return , 1336, 757
 If (A_IsSuspended)
 {
-ToolTipFont("s7", "Verdana")
-ToolTipColor("Black", "ffffff")
-Tooltip, K, 1336, 766
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("K", 1326, 766, 2,HFONT, "Black", "White",,"S")
 }
 else
 {
-ToolTipFont("s7", "Verdana")
-ToolTipColor("Red", "Blue")
-Tooltip, K, 1336, 766
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("K", 1326, 766, 2,HFONT, "Red", "Black",,"S")
 }
 return
 
 #Include, d:\KEYBOARD\VimKee4\AddonsForKeys4Vim.ahk
+#Include, d:\KEYBOARD\ToolTip\ToolTipEx.ahk
 
 ; Vim mode {{{
 #IfWInActive, ahk_group VimGroup
