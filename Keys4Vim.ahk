@@ -1,9 +1,6 @@
-
+; Auto-execute section {{{
 Process, Priority, , AboveNormal    ; Эта запись сообщает операционной системе уделить больше внимания к исполнению данных команд
 
-
-
-; Auto-execute section {{{
 ;GroupAdd VimGroup, ahk_exe cmd.exe ; cmd
 ;GroupAdd VimGroup, ahk_exe MathcadPrime.exe
 ;GroupAdd VimGroup, ahk_class Photo_Lightweight_Viewer ; Photo_Viewer_windows
@@ -28,7 +25,7 @@ Vim_n=0
 VimLineCopy=0
 
 HFONT := GetHFONT("s6", "Arial")
-ToolTipEx("K", 1326, 766, 2,HFONT, "Red", "Black",,"S")
+ToolTipEx("K", 1326, 766, 2,HFONT, "Black", "White",,"S")
 
 ; }}}
 
@@ -42,12 +39,12 @@ ToolTipEx("K", 1326, 766, 2,HFONT, "Red", "Black",,"S")
 
 #HotkeyInterval 2000 ; Hotkey inteval (default 2000 milliseconds).
 #MaxHotkeysPerInterval 70 ; Max hotkeys perinterval (default 50).
-
-<+<!r::Reload  ; Assign LShift-LAlt-R as a hotkey to restart the script.
+Suspend
++<!r::Reload  ; Assign LShift-RAlt-R as a hotkey to restart the script.
 ~vkC0 & F2::ExitApp     ;` & F2
 Return
 
-+Space::
+<+Space::
 +LButton::
 Suspend
 ;ToolTip % (A_IsSuspended) ? "S": Return , 1336, 757
@@ -66,13 +63,12 @@ return
 #Include, d:\KEYBOARD\VimKee4\AddonsForKeys4Vim.ahk
 #Include, d:\KEYBOARD\ToolTip\ToolTipEx.ahk
 
-; Vim mode {{{
 #IfWInActive, ahk_group VimGroup
 
 
+;}}}
 
-
-; Reset Modes {{{
+; Set Mode {{{
 
 VimSetMode(Mode="", g=0, n=0, LineCopy=-1) {
   global
@@ -147,7 +143,7 @@ VimCheckMode(verbose=0,Mode="", g=0, n=0, LineCopy=-1) {
 
 ; }}}
 
-; {{ Toogle mode
+; Toogle mode {{{
 
 #If WInActive("ahk_group VimGroup")  && (VimMode =="Insert")
 
@@ -173,9 +169,8 @@ q::VimSetMode("Insert")  ; q
 t::VimSetMode("Normal")  ; t
 Return
 
-;}}
+;}}}
 
-; 4keys {{{{
 ; Insert mode {{{
 
 ;3::VimSetMode("Insert")
@@ -236,7 +231,7 @@ N:=0
 Loop {
    N++
    KeyWait, %A_ThisHotkey%
-   KeyWait, %A_ThisHotkey%, D T0.3
+   KeyWait, %A_ThisHotkey%, D T0.1
 } Until ErrorLevel
    Gosub % IsLabel(L := A_ThisHotkey . "_" . N) ? L : "NotCombs"
 Return
@@ -317,10 +312,11 @@ g::Send, {BackSpace}      ; g
 w::Send, {Left}           ; w
 e::Send, {Right}          ; e
 r::Send, ^{BackSpace}     ; r
-
++r::Send, ^{vk41}{BackSpace}     ; +r -> ^a and BackSpace
 Return
 
-; }} Insert mode
+; }}} Insert mode
+
 ; Normal mode {{{
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Normal")
@@ -342,12 +338,9 @@ Return
 
 ; }}} Normal mode
 
-; Vim comamnd mode {{{
-
-
+; Numpad mode {{{
 #If WInActive("ahk_group VimGroup") and (VimMode="Numpad")
 
-; Numpad  {{
 ;Space::send {vkD}        ; NumpadEnter
 x::send {1}               ; x (Numpad1)
 c::send {2}               ; c (Numpad2)
@@ -358,25 +351,26 @@ f::send {6}               ; f (Numpad6)
 w::send {7}               ; w (Numpad7)
 e::send {8}               ; e (Numpad8)
 r::send {9}               ; r (Numpad9)
-b::send {.}               ; b (NumpadDel)
+z::send {.}               ; b (NumpadDel)
++z::send {,}               ; b (NumpadDel)
 
 1::send {=}                ; =
 2::send {_}                ; _
-3::send {-}                ; -
+3::send {Enter}                ; -
 4::send {/}                ; 4 (NumpadDiv)
 5::send {*}                ; 5 (NumpadMult)
 6::send {-}                ; 6 (NumpadSub)
 g::send {+}               ; g (NumpadAdd)
 a::send {0}               ; a (Numpad0)
-z::send {BackSpace}       ; z (BackSpace)
+b::send {BackSpace}       ; z (BackSpace)
 `::Run, calc.exe          ; 1 (Calculator)
 LControl::
 ;LShift & LButton::
 send {Space}           ;  (Space)
 Return
-;}} Numpad
+;}}} Numpad
 
-
+; Other {{{
 /*
 ; Numpad  {{
 ;Space::send {vkD}        ; NumpadEnter
@@ -408,7 +402,7 @@ Return
 ;}} Numpad
 */
 /*
-; Normal mode {{{
+; Normal mode {{
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Normal")
 
@@ -427,7 +421,7 @@ sc1E::Send,{BackSpace}                  ; a
 sc13::Send,^{BackSpace}                 ; r
 Return
 
-; }}} Normal mode
+; }} Normal mode
 */
 /*
 sc2::send, {&}               ; 1
@@ -448,3 +442,4 @@ sc11::Send, {Left}           ; w
 sc12::Send, {Right}          ; e
 sc13::Send, ^{BackSpace}     ; r
 */
+;}}}
