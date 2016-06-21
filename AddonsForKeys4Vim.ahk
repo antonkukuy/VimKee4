@@ -117,7 +117,8 @@ _TTG(Cmd, Arg1, Arg2 := "") {
 
 #IfWinActive ahk_exe swf_player.exe
 vk20::send {vk20}   ;space to space
-LControl::
+;LControl::
+ESC::
 MouseClick, left,  1166,  721
 Sleep, 100
 MouseClick, left,  1166,  721
@@ -129,6 +130,11 @@ Return
 
 #IfWinActive
 
+#IfWinActive ahk_exe chrome.exe
++^Space::
+send ^{Right}   ;space to space
+Return
+#IfWinActive
 
 /*
 #IfWinActive, ahk_exe ugol.exe
