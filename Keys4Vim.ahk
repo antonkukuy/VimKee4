@@ -15,8 +15,8 @@ GroupAdd VimGroup
 ;GroupAdd VimGroup, ahk_exe sublime_text.exe
 ;GroupAdd AllWindons
 
-
-vim_verbose=1
+; vim_verbose: 0 - no message; 1 - short message; 2 - full message
+vim_verbose=0
 
 
 VimMode=Insert
@@ -25,12 +25,8 @@ Vim_n=0
 VimLineCopy=0
 
 HFONT := GetHFONT("s6", "Arial")
-ToolTipEx("K", 1326, 766, 2,HFONT, "Black", "White",,"S")
+ToolTipEx("S", 1326, 766, 2,HFONT, "Black", "White",,"S")
 
-; }}}
-
-; Basic Settings, HotKeys, Functions {{{
-; Settings
 
 #UseHook On ; Make it a bit slow, but can avoid infinitude loop
             ; Same as "$" for each hotkey
@@ -44,21 +40,35 @@ Suspend
 ~vkC0 & F2::ExitApp     ;` & F2
 Return
 
-<+Space::
-+LButton::
+<^Space::
+;+LButton::
 Suspend
 ;ToolTip % (A_IsSuspended) ? "S": Return , 1336, 757
 If (A_IsSuspended)
 {
 HFONT := GetHFONT("s6", "Arial")
-ToolTipEx("K", 1326, 766, 2,HFONT, "Black", "White",,"S")
+ToolTipEx("S", 1326, 766, 2,HFONT, "Black", "White",,"S")
+Return
 }
-else
+else if (VimMode ="Insert")
 {
 HFONT := GetHFONT("s6", "Arial")
-ToolTipEx("K", 1326, 766, 2,HFONT, "Red", "Black",,"S")
+ToolTipEx("I", 1326, 766, 2,HFONT, "Yellow", "Black",,"S")
+Return
 }
-return
+else if (VimMode ="Normal")
+{
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("N", 1326, 766, 2,HFONT, "Red", "Black",,"S")
+Return
+}
+else (VimMode ="Numpad")
+{
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("N", 1326, 766, 2,HFONT, "Blue", "White",,"S")
+Return
+}
+Return
 
 #Include, d:\KEYBOARD\VimKee4\AddonsForKeys4Vim.ahk
 #Include, d:\KEYBOARD\ToolTip\ToolTipEx.ahk
@@ -147,26 +157,47 @@ VimCheckMode(verbose=0,Mode="", g=0, n=0, LineCopy=-1) {
 
 #If WInActive("ahk_group VimGroup")  && (VimMode =="Insert")
 
-q::VimSetMode("Numpad")  ;q
+t::
+VimSetMode("Numpad")  ;q
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("N", 1326, 766, 2,HFONT, "Blue", "White",,"S")
+Return
 ;sc10::VimSetMode("Numpad")  ;q
 ;sc14::VimSetMode("Normal")  ;t
-t::VimSetMode("Normal")  ;t
+q::
+VimSetMode("Normal")  ;t
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("N", 1326, 766, 2,HFONT, "Red", "Black",,"S")
 Return
 
 #If WInActive("ahk_group VimGroup") && (VimMode=="Normal")
 
-t::VimSetMode("Insert")  ;t
+q::
+VimSetMode("Insert")  ;t
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("I", 1326, 766, 2,HFONT, "Yellow", "Black",,"S")
+Return
 ;sc14::VimSetMode("Insert")  ;t
 ;sc10::VimSetMode("Numpad")  ;q
-q::VimSetMode("Numpad")  ;q
+t::
+VimSetMode("Numpad")  ;q
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("N", 1326, 766, 2,HFONT, "Blue", "White",,"S")
 Return
 
 #If WInActive("ahk_group VimGroup") && (VimMode=="Numpad")
 
-q::VimSetMode("Insert")  ; q
+t::
+VimSetMode("Insert")  ; q
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("I", 1326, 766, 2,HFONT, "Yellow", "Black",,"S")
+Return
 ;sc10::VimSetMode("Insert")  ; q
 ;sc14::VimSetMode("Normal")  ; t
-t::VimSetMode("Normal")  ; t
+q::
+VimSetMode("Normal")  ; t
+HFONT := GetHFONT("s6", "Arial")
+ToolTipEx("N", 1326, 766, 2,HFONT, "Red", "Black",,"S")
 Return
 
 ;}}}
@@ -180,44 +211,43 @@ Return
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 SetKeyDelay, -1
 
-
-vk46 & vk5A::Send, {vk5A}           ;f & z ;z
-vk41 & vk56::Send, {vk51}           ;a & v ;q
+vk41 & vk56::Send, {Blind}{vk51}           ;a & v ;q
+vk46 & vk5A::Send, {Blind}{vk5A}           ;f & z ;z
 ;======================= a =======================
-vk41 & vk53::Send, {vk4C}           ;a & s ;l
-vk41 & vk44::Send, {vk49}           ;a & d ;i
-vk41 & vk46::Send, {vk57}           ;a & f ;w
+vk41 & vk53::Send, {Blind}{vk4C}           ;a & s ;l
+vk41 & vk44::Send, {Blind}{vk49}           ;a & d ;i
+vk41 & vk46::Send, {Blind}{vk57}           ;a & f ;w
 ;======================= z =======================
-vk5A & vk58::Send, {vk4E}           ;z & x ;n
-vk5A & vk43::Send, {vk50}           ;z & c ;p
-vk5A & vk56::Send, {vk4A}           ;z & v ;j
+vk5A & vk58::Send, {Blind}{vk4E}           ;z & x ;n
+vk5A & vk43::Send, {Blind}{vk50}           ;z & c ;p
+vk5A & vk56::Send, {Blind}{vk4A}           ;z & v ;j
 
 ;======================= s =======================
-vk53 & vk41::Send, {vk4F}           ;s & a ;o
-vk53 & vk44::Send, {vk41}           ;s & d ;a
-vk53 & vk46::Send, {vk43}           ;s & f ;c
+vk53 & vk41::Send, {Blind}{vk4F}           ;s & a ;o
+vk53 & vk44::Send, {Blind}{vk41}           ;s & d ;a
+vk53 & vk46::Send, {Blind}{vk43}           ;s & f ;c
 ;======================= x =======================
-vk58 & vk5A::Send, {vk4D}           ;x & z ;m
-vk58 & vk43::Send, {vk46}           ;x & c ;f
-vk58 & vk56::Send, {vk47}           ;x & v ;g
+vk58 & vk5A::Send, {Blind}{vk4D}           ;x & z ;m
+vk58 & vk43::Send, {Blind}{vk46}           ;x & c ;f
+vk58 & vk56::Send, {Blind}{vk47}           ;x & v ;g
 
 ;======================= d =======================
-vk44 & vk41::Send, {vk59}           ;d & a ;y
-vk44 & vk53::Send, {vk45}           ;d & s ;e
-vk44 & vk46::Send, {vk48}           ;d & f ;h
+vk44 & vk41::Send, {Blind}{vk59}           ;d & a ;y
+vk44 & vk53::Send, {Blind}{vk45}           ;d & s ;e
+vk44 & vk46::Send, {Blind}{vk48}           ;d & f ;h
 ;======================= c =======================
-vk43 & vk5A::Send, {vk52}           ;c & z ;r
-vk43 & vk58::Send, {vk53}           ;c & x ;s
-vk43 & vk56::Send, {vk58}           ;c & v ;x
+vk43 & vk5A::Send, {Blind}{vk52}           ;c & z ;r
+vk43 & vk58::Send, {Blind}{vk53}           ;c & x ;s
+vk43 & vk56::Send, {Blind}{vk58}           ;c & v ;x
 
 ;======================= f =======================
-vk46 & vk41::Send, {vk55}           ;f & a ;u
-vk46 & vk53::Send, {vk44}           ;f & s ;d
-vk46 & vk44::Send, {vk54}           ;f & d ;t
+vk46 & vk41::Send, {Blind}{vk55}           ;f & a ;u
+vk46 & vk53::Send, {Blind}{vk44}           ;f & s ;d
+vk46 & vk44::Send, {Blind}{vk54}           ;f & d ;t
 ;======================= v =======================
-vk56 & vk5A::Send, {vk42}           ;v & z ;b
-vk56 & vk58::Send, {vk4B}           ;v & x ;k
-vk56 & vk43::Send, {vk56}           ;v & c ;v
+vk56 & vk5A::Send, {Blind}{vk42}           ;v & z ;b
+vk56 & vk58::Send, {Blind}{vk4B}           ;v & x ;k
+vk56 & vk43::Send, {Blind}{vk56}           ;v & c ;v
 
 #If WInActive("ahk_group VimGroup") && (VimMode == "Insert")
 
@@ -227,6 +257,15 @@ vk56 & vk43::Send, {vk56}           ;v & c ;v
 4::
 5::
 6::
+Alt::
+a::
+s::
+d::
+f::
+z::
+x::
+c::
+v::
 N:=0
 Loop {
    N++
@@ -236,9 +275,36 @@ Loop {
    Gosub % IsLabel(L := A_ThisHotkey . "_" . N) ? L : "NotCombs"
 Return
 NotCombs:
-   MsgBox % "You have exceeded the number of combinations " . A_ThisHotkey . " : " . N
+;   MsgBox % "You have exceeded the number of combinations " . A_ThisHotkey . " : " . N
 Return
 
+Alt_1:
+send, {Enter}
+Return
+a_2:
+send, {'}{'}{Left}
+Return
+s_2:
+send, {|}
+Return
+d_2:
+send, {\}
+Return
+f_2:
+send, {"}{"}{Left}
+Return
+z_2:
+send, {?}
+Return
+x_2:
+send, {/}{/}{Left}
+Return
+c_2:
+send, {`;}
+Return
+v_2:
+send, {:}
+Return
 1_1:
 send, {!}                 ; 1
 Return
@@ -246,7 +312,7 @@ Return
 send, {&}                 ; 1
 Return
 1_3:
-send, {<}                 ; 1
+send, {<}{>}{Left}                 ; 1
 Return
 
 2_1:
@@ -256,14 +322,14 @@ Return
 send, {*}                 ; 2
 Return
 2_3:
-send, {>}                 ; 2
+send, {(}{)}{Left}        ; 2
 Return
 
 3_1:
 send, {#}                 ; 3
 Return
 3_2:
-send, {(}                 ; 3
+send, {,}                 ; 3
 Return
 3_3:
 send, {?}                 ; 3
@@ -273,7 +339,7 @@ Return
 send, {$}                 ; 4
 Return
 4_2:
-send, {)}                 ; 4
+send, {.}                 ; 4
 Return
 4_3:
 send, {/}                 ; 4
