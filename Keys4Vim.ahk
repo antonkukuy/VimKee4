@@ -19,7 +19,7 @@ GroupAdd VimGroup
 vim_verbose=0
 
 
-VimMode=Insert
+VimMode=Numpad
 Vim_g=0
 Vim_n=0
 VimLineCopy=0
