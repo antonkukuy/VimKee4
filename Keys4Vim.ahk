@@ -70,8 +70,8 @@ Return
 }
 Return
 
-#Include, d:\KEYBOARD\VimKee4\AddonsForKeys4Vim.ahk
-#Include, d:\KEYBOARD\ToolTip\ToolTipEx.ahk
+#Include, AddonsForKeys4Vim.ahk
+#Include, ToolTipEx.ahk
 
 #IfWInActive, ahk_group VimGroup
 
